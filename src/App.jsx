@@ -16,9 +16,7 @@ function App() {
             <GlobalStyle/>
             <BrowserRouter>
                 <Routes>
-
                     <Route element={<AppLayout/>}>
-
                         <Route index element={<Navigate replace to="dashboard"/>}/>
                         <Route path="dashboard" element={<Dashboard/>}/>
                         <Route path="bookings" element={<Bookings/>}/>
@@ -26,9 +24,7 @@ function App() {
                         <Route path="users" element={<Users/>}/>
                         <Route path="settings" element={<Settings/>}/>
                         <Route path="account" element={<Account/>}/>
-
                     </Route>
-
                     <Route path="login" element={<Login/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
 
@@ -39,4 +35,5 @@ function App() {
 }
 
 export default App;
-// S25 E 10 was finished
+// S26 E9 was finished
+
