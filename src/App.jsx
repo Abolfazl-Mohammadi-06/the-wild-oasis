@@ -51,5 +51,5 @@ function App() {
 }
 
 export default App;
-// S27 E5 was finished
+// S27 E6 was finished
 
