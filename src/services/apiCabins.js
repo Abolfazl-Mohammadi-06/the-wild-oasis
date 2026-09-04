@@ -25,3 +25,5 @@ export async function deleteCabin(id) {
     return data;
 
 }
+
+// export async function createCabin(newCabin) {}
