@@ -71,4 +71,31 @@ function App() {
 
 export default App;
 // S27 E9 was finished
+// I should learn : State Architecture,Authentication,Zod Validation,Error Handling,Testing,معماری پروژه,GET
+// POST
+// PUT
+// PATCH
+// DELETE
+//
+// 200
+// 201
+// 400
+// 401
+// 403
+// 404
+// 409
+// 422
+// 500
+// Headers
+// Cookies
+// Authorization
+// CORS
+// JSON
+// FormData
+// AbortController
+// date-fns
+// Lucide React
+// Framer Motion / Motion
+// shadcn/ui
+// Radix UI
 
