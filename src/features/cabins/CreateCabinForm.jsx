@@ -73,7 +73,7 @@ function CreateCabinForm() {
 
 
     function onSubmit(data) {
-        mutate(data);
+        mutate({...data, image: data.image[0]});
     }
 
     function onError(errors) {
@@ -125,13 +125,17 @@ function CreateCabinForm() {
             </FormRow>
 
             <FormRow label="Description for website" disabled={isCreating} error={errors?.description?.message}>
-                <Textarea type="number" id="description" disabled={isCreating} defaultValue="" {...register('description', {
+                <Textarea type="number" id="description" disabled={isCreating}
+                          defaultValue="" {...register('description', {
                     required: "this field is required."
                 })} />
             </FormRow>
 
             <FormRow label="Cabin photo">
-                <FileInput id="image" accept="image/*" {...register('image')} />
+                <FileInput id="image" accept="image/*"
+                           {...register('image', {
+                               required: "this field is required."
+                           })} />
             </FormRow>
 
             <FormRow2>
