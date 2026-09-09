@@ -53,20 +53,19 @@ function CabinRow({cabin}) {
     const {id: cabinId, name, maxCapacity, regularPrice, discount, image} = cabin;
 
 
-    const queryClient = useQueryClient();
-
-
-    const {isLoading: isDeleting, mutate} = useMutation({
-        mutationFn: deleteCabin,
-        onSuccess: () => {
-            toast.success("Cabins deleted successfully.");
-
-            queryClient.invalidateQueries({
-                queryKey: ['cabins'],
-            });
-        },
-        onError: eer => toast.error(err.message),
-    })
+    // const queryClient = useQueryClient();
+    //
+    // const {isLoading: isDeleting, mutate} = useMutation({
+    //     mutationFn: deleteCabin,
+    //     onSuccess: () => {
+    //         toast.success("Cabins deleted successfully.");
+    //
+    //         queryClient.invalidateQueries({
+    //             queryKey: ['cabins'],
+    //         });
+    //     },
+    //     onError: eer => toast.error(err.message),
+    // });
 
     return (
         <>
@@ -75,7 +74,7 @@ function CabinRow({cabin}) {
                 <Cabin>{name}</Cabin>
                 <div>Fits up to {maxCapacity} guests</div>
                 <Price>{formatCurrency(regularPrice)}</Price>
-                <Discount>{formatCurrency(discount)}</Discount>
+                {discount ? <Discount>{formatCurrency(discount)}</Discount> : <span>&mdash;</span>}
                 <div>
                     <button onClick={() => setShowForm(show => !show)}>Edit</button>
                     <button onClick={() => mutate(cabinId)} disabled={isDeleting}>Delete</button>
@@ -83,7 +82,7 @@ function CabinRow({cabin}) {
             </TableRow>
 
             {
-                showForm && <CreateCabinForm cabinToEdit={cabin} />
+                showForm && <CreateCabinForm cabinToEdit={cabin}/>
             }
         </>
     );
