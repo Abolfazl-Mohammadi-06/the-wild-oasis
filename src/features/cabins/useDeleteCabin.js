@@ -19,6 +19,6 @@ export function useDeleteCabin() {
         onError: eer => toast.error(err.message),
     });
 
-    return{isDeleting, deleteCabin};
+    return {isDeleting, deleteCabin};
 
 }
