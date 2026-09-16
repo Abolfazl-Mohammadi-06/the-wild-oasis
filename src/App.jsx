@@ -70,7 +70,7 @@ function App() {
 }
 
 export default App;
-// S27 E13 was finished
+// S28 E1 was finished
 // I should learn : State Architecture,Authentication,Zod Validation,Error Handling,Testing,معماری پروژه,GET
 // POST
 // PUT
